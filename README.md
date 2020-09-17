@@ -1,5 +1,7 @@
 # PROJECT DESCRIPTION
 
+The purpose of this project is to re-implement Graph Processing program using Spark and Scala. 
+
 An undirected graph is represented in the input text file using one line per graph vertex. <br />
 For example, the line  <br />
 1,2,3,4,5,6,7  <br />
@@ -21,10 +23,10 @@ For example, the following graph:
 7,6 <br />
 
 
-The Map-Reduce program finds <b> the connected components of any undirected graph and prints the size of these connected components</b>.  <br />A connected component of a graph is a subgraph of the graph in which there is a path from any two vertices in the subgraph.  <br />For the above graph, there are two connected components: one 0,8,9 and another 1,2,3,4,5,6,7. The program prints the sizes of these connected components: 3 and 7.
+That is, the program will find <b> the connected components of any undirected graph and prints the size of these connected components</b>.  <br />A connected component of a graph is a subgraph of the graph in which there is a path from any two vertices in the subgraph.  <br />For the above graph, there are two connected components: one 0,8,9 and another 1,2,3,4,5,6,7. The program prints the sizes of these connected components: 3 and 7.
 
 
 To compile and run the project navigate to the given directory and do the following steps: <br />
 mvn install <br />
 rm -rf output <br />
-~/hadoop-2.6.5/bin/hadoop jar target/*.jar Graph small-graph.txt intermediate output
+~/spark-1.5.2-bin-hadoop2.6/bin/spark-submit --class Graph --master local[2] graph.jar small-graph.txt
